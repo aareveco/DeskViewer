@@ -9,7 +9,7 @@ const { ipcRenderer } = window.require("electron");
 
 const App = () => {
   const callRef = useRef();
-  const socket = io("http://127.0.0.1:5000");
+  const socket = io("http://127.0.0.1:5001");
 
   const remoteId = useSelector((state) => state.connection.remoteConnectionId);
   const [sessionEnded, setSessionEnded] = useState(false);
@@ -22,7 +22,7 @@ const App = () => {
 
     socket.on("connect_error", (e) => {
       console.log("Socket connection error, retrying..." + e);
-      setTimeout(() => socket.connect(), 5000);
+      setTimeout(() => socket.connect(), 5001);
     });
 
     socket.on("disconnect", () => {
