@@ -12,3 +12,5 @@ npm cache clean --force
 
 # Reinstall dependencies
 npm install
+
+npx electron-rebuild -f -w robotjs
